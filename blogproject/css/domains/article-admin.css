@@ -1,0 +1,60 @@
+/* 后台文章列表管理 */
+.article-list-manage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    min-height: 65vh;
+}
+
+/* 文章列表项目样式 */
+.article-list-manage article {
+    background: var(--color-background);
+    height: 80px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+}  
+.article-list-manage article:hover {    
+    border-color: var(--color-text-light);
+}
+
+.article-admin-content {
+    display: flex;
+    align-items: center;
+    flex: 1 1 80%;
+} 
+.article-admin-content h3 {
+    font-size: var(--font-size-lg);
+    margin-left: var(--space-4);
+    margin-right: var(--space-4);
+    margin-bottom: 0;
+    white-space: normal;
+    flex: 0 0 20%;
+}
+.article-admin-content p{
+    font-size: var(--font-size-base);
+    margin-left: var(--space-4);
+    text-align: left;
+    margin-bottom: 0;
+    flex: 1 1 60%;
+} 
+.article-admin-content time{
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: 0;
+    flex: 0 0 100px;
+}
+
+  /* 文章管理选项 编辑和删除*/
+.article-admin-actions {
+    display: flex;
+    margin-right: var(--space-2);
+    gap: var(--space-4);
+    flex-shrink: 0;
+}

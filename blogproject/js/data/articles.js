@@ -1,0 +1,37 @@
+export const articleList = [
+    {
+        id:1,
+        title:"如何学习前端开发", 
+        excerpt:"本文介绍了前端开发的学习路径和资源推荐，适合初学者入门。",
+        content:"内容待补充",
+        datetime:"2023-10-15"
+    },
+    {
+        id:2,
+        title:"HTML5新特性解析", 
+        excerpt:"详细解析HTML5引入的新标签和API，以及它们在实际项目中的应用。",
+        content:"内容待补充",
+        datetime:"2023-9-28"
+    },
+    {
+        id:3,
+        title:"响应式设计最佳实践",
+        excerpt:"探讨如何创建适应不同屏幕尺寸的网站，提供实用的响应式设计技巧。",
+        content:"内容待补充",
+        datetime:"2023-9-10"
+    },
+    {
+        id:4,
+        title:"Web性能优化指南", 
+        excerpt:"分享提升网站加载速度和用户体验的各种方法和工具。",
+        content:"内容待补充",
+        datetime:"2023-8-22"
+    },
+    {
+        id:5,
+        title:"Git版本控制入门", 
+        excerpt:"适合新手的Git教程，涵盖基本命令和工作流程。",
+        content:"内容待补充",
+        datetime:"2023-8-5"
+    },
+]   // 模拟文章列表

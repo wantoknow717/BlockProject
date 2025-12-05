@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式设计最佳实践 - 我的博客</title>
+    <link rel="stylesheet" href="../css/global/reset.css">
+    <link rel="stylesheet" href="../css/global/variables.css">
+    <link rel="stylesheet" href="../css/global/base.css">
+    <link rel="stylesheet" href="../css/global/layout.css">
+    <link rel="stylesheet" href="../css/global/utilities.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/nav.css">
+    <link rel="stylesheet" href="../css/domains/site.css">
+    <link rel="stylesheet" href="../css/domains/article-content.css">
+</head>
+<body class="container">
+    <!-- 页面头部 -->
+    <header class="site-header">
+        <div class="site-header-container">
+            <a href="../index.html" class="site-header-brand">我的博客</a>
+            <nav>
+                <ul class="site-header-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </nav>
+        </div>        
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        <div class="article-container">
+            <article class="article-content">
+                <!-- 文章标题 -->
+                <header class="article-header">
+                    <h2 class="article-title">响应式设计最佳实践</h2>
+                    <div class="article-meta">
+                        <time datetime="2023-09-10">发布日期：2023年9月10日</time>
+                        <span>作者：王五</span>
+                    </div>
+                </header>
+                
+                <!-- 文章内容 -->
+                <section>
+                    <h3>什么是响应式设计</h3>
+                    <p>响应式网页设计是一种网页设计方法，使网站能够在各种设备和屏幕尺寸上都能正常显示和使用。</p>
+                </section>
+    
+                <section>
+                    <h3>视口设置</h3>
+                    <p>正确的视口设置是响应式设计的基础：</p>
+                    <code class="alone-code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    <p>这个meta标签确保页面在不同设备上都能正确缩放。</p>
+                </section>
+    
+                <section>
+                    <h3>流体网格布局</h3>
+                    <p>使用百分比而非固定像素来定义布局：</p>
+                    <ul>
+                        <li>容器宽度使用百分比</li>
+                        <li>内边距和外边距使用相对单位</li>
+                        <li>避免固定宽度布局</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3>媒体查询</h3>
+                    <p>媒体查询是响应式设计的核心技术：</p>
+                    <ul>
+                        <li>根据屏幕尺寸应用不同样式</li>
+                        <li>设置断点适应不同设备</li>
+                        <li>移动优先的设计理念</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3>弹性图片</h3>
+                    <p>确保图片能够自适应容器：</p>
+                    <pre><code>img {
+        max-width: 100%;
+        height: auto;
+    }</code></pre>
+                </section>
+    
+                <section>
+                    <h3>响应式排版</h3>
+                    <p>文字大小也需要响应式：</p>
+                    <ul>
+                        <li>使用相对单位（em, rem）</li>
+                        <li>根据屏幕尺寸调整字号</li>
+                        <li>确保可读性</li>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3>总结</h3>
+                    <p>响应式设计是现代Web开发的必备技能，通过合理运用这些技术，可以创建出在各种设备上都能提供优秀用户体验的网站。</p>
+                </section>
+    
+                <!-- 返回首页链接 -->
+                <footer class="article-footer">
+                    <a href="../index.html">
+                        <div class="back-to-home">
+                            <p>← 返回首页</p>
+                        </div>        
+                    </a>
+                </footer>
+            </article>
+        </div>
+    </main>                   
+
+    <!-- 页面底部 -->
+    <footer class="site-footer">
+        <p>&copy; 2025 我的博客. 保留所有权利.</p>
+    </footer>
+</body>
+</html>

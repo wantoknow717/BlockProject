@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客后台管理</title>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <h1>博客后台管理系统</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">返回首页</a></li>
+                <li><a href="#">系统设置</a></li>
+                <li><a href="#">用户管理</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主要内容 -->
+    <main>
+        <!-- 登录区域 -->
+        <section id="login-section">
+            <h2>管理员登录</h2>
+            <form id="login-form">
+                <div>
+                    <label for="username">用户名：</label>
+                    <input type="text" id="username" name="username">
+                    <!-- for和id是对应的，name是用于提交数据的名字 -->
+                </div>
+                <div>
+                    <label for="passward">密码：</label>
+                    <input type="text" id="passward" name="passward">
+                </div>
+                <button type="submit">登录</button>
+            </form>
+        </section>
+        <!-- 管理功能区（初始为隐藏） -->
+        <section id="admin-section" style="display:none;">
+            <h2>文章管理</h2>
+
+            <!-- 新建文章按钮 -->
+            <button id="new-article-bin">新建文章</button>
+
+            <!-- 文章列表 -->
+            <div id="article-list">
+                <article>
+                    <h3>如何学习前端开发</h3>
+                    <p>本文介绍了前端开发的学习路径和资源推荐，适合初学者入门。</p>
+                    <time datetime="2023-10-15">2023年10月15日</time>
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </article>
+                <article>
+                    <h3>HTML5新特性解析</h3>
+                    <p>详细解析HTML5引入的新标签和API，以及它们在实际项目中的应用。</p>
+                    <time datetime="2023-09-28">2023年9月28日</time>
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </article>
+                <article>
+                    <h3>响应式设计最佳实践</h3>
+                    <p>探讨如何创建适应不同屏幕尺寸的网站，提供实用的响应式设计技巧。</p>
+                    <time datetime="2023-09-10">2023年9月10日</time>
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </article>
+                
+                <article>
+                    <h3>Web性能优化指南</h3>
+                    <p>分享提升网站加载速度和用户体验的各种方法和工具。</p>
+                    <time datetime="2023-08-22">2023年8月22日</time>
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </article>            
+                <article>
+                    <h3>Git版本控制入门</h3>
+                    <p>适合新手的Git教程，涵盖基本命令和工作流程。</p>
+                    <time datetime="2023-08-05">2023年8月5日</time>
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </article>
+            </div>
+
+            <!-- 文章编辑表单 -->
+            <div id="article-form-model" style="display: none;">
+                <form id="article-form">
+                    <h3 id="form-title">新建文章</h3>
+                    <div>
+                        <label for="article-title">标题：</label>
+                        <input type="text" id="article-title" name="title">
+                    </div>
+                    <div>
+                        <label for="article-content">内容：</label>
+                        <textarea type="text" id="article-content" name="content" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <label for="article-date">发布日期：</label>
+                        <input type="date" id="article-date" name="date">
+                    </div>
+                    <div>
+                        <button type="submit" id="save-btn">保存</button>
+                        <button type="button" id="cancel-btn">取消</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- 页面底部 -->
+    <footer>
+        <p>&copy; 2025个人博客系统-后台管理</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* 卡片组件 */
+.card {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    padding: var(--space-6) var(--space-6) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.card-body {
+    padding: var(--space-6);
+}
+
+.card-footer {
+    padding: 0 var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-4);
+}
+
+/* 文章卡片变体 */
+.article-card {
+    /* composes:card; 这里的知识涉及css module的样式继承，我们放在第四层进行学习 */
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    height: 100%;
+}
+.article-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.article-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}

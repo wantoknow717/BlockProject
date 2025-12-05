@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客后台管理</title>
+    <link rel="stylesheet" href="./css/global/reset.css">
+    <link rel="stylesheet" href="./css/global/variables.css">
+    <link rel="stylesheet" href="./css/global/base.css">
+    <link rel="stylesheet" href="./css/global/layout.css">
+    <link rel="stylesheet" href="./css/global/utilities.css">
+    <link rel="stylesheet" href="./css/components/modal.css">
+    <link rel="stylesheet" href="./css/components/modal_types.css">
+    <link rel="stylesheet" href="./css/components/buttons.css">
+    <link rel="stylesheet" href="./css/components/button_types.css">
+    <link rel="stylesheet" href="./css/components/cards.css">
+    <link rel="stylesheet" href="./css/components/nav.css">
+    <link rel="stylesheet" href="./css/components/form.css">
+    <link rel="stylesheet" href="./css/domains/site.css">
+    <link rel="stylesheet" href="./css/domains/login.css">
+    <link rel="stylesheet" href="./css/domains/article-admin.css">
+    <link rel="stylesheet" href="./css/pages/pages_admin.css">
+    
+    
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="site-header" >
+        <div class="site-header-container">
+            <a href="./admin.html" class="site-header-brand">博客后台管理系统</a>
+            <nav>
+                <ul class="site-header-nav">
+                    <li><a href="../index.html">返回首页</a></li>
+                    <li><a href="#">系统设置</a></li>
+                    <li><a href="#">用户管理</a></li>
+                </ul>
+            </nav>
+        </div>        
+    </header>
+    
+    <!-- 主要内容 -->
+    <main>
+        <div class="admin-container">
+            <!-- 登录区域 -->
+            <section id="admin-login-section" class="login-section" >
+                <h2>管理员登录</h2>
+                <form id="admin-login-form" class="login-form">
+                    <div class="login-field">
+                        <label for="username">用户名：</label>
+                        <input type="text" id="username" name="username" autofocus placeholder="请输入账户名称" >
+                        <!-- for和id是对应的，name是用于提交数据的名字 -->
+                    </div>
+                    <div class="login-field">
+                        <label for="password">密码：</label>
+                        <input type="text" id="password" name="password" placeholder="请输入密码" >
+                    </div>
+                    <div class="login-actions">
+                        <button type="submit" class="login-submit">登录</button>
+                    </div>                    
+                </form>
+            </section>
+            
+            <!-- 管理功能区（初始为隐藏） -->
+            <section id="admin-list-section" class="admin-section">
+                <div class="admin-header">
+                    <h2>文章管理</h2>
+                    <!-- 新建文章按钮 -->
+                    <button id="new-article-btn">新建文章</button>
+                </div>                
+
+                <!-- 文章列表 -->
+                <div id="admin-article-list" class="article-list-manage" >
+                    <!-- 列表内容动态生成 -->
+                </div>
+
+                <!-- 文章编辑表单 -->
+                <div id="article-form-modal" class="admin-modal-overlay">
+                    <form id="article-form" class="admin-modal">
+                        <div class="admin-modal-header">
+                            <h3 id="form-title">新建文章</h3>
+                            <button type="button" class="admin-modal-close" id="close-btn">&times;</button>
+                        </div>
+                        <div class="admin-modal-body">
+                            <div class="admin-form-group">
+                                <label for="article-title">标题：</label>
+                                <input type="text" id="article-title" name="title" placeholder="在此输入标题...">
+                            </div>
+                            <div class="form-group">
+                                <label for="article-excerpt">简介：</label>
+                                <input type="text" id="article-excerpt" name="excerpt" placeholder="一句话简介">
+                            </div>
+                            <div class="form-group">
+                                <label for="article-content">内容：</label>
+                                <textarea type="text" id="article-content" name="content" rows="10" placeholder="在此输入内容..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="article-date" >发布日期：</label>
+                                <input type="date" id="article-date" name="datetime">
+                            </div>
+                        </div>                        
+                        
+                        <div class="admin-form-actions">
+                            <button type="submit" id="save-btn">保存</button>
+                            <button type="button" id="cancel-btn">取消</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </section>
+
+            <!-- 登录成功提醒框 -->
+            <div class="modal-success-overlay">
+                <div class="modal-success-content">
+                    <div class="modal-success-header">
+                        <div class="success-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#27ae60">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>登录成功</h3>
+                    </div>
+                    <p>欢迎回来！</p>
+                    <button>&times;</button>
+                </div>
+            </div>
+
+
+            <!-- 通用自动消失提醒框 -->
+            <div id="auto-modal-container" class="modal-overlay">
+                <div class="modal">
+                    <div class="modal-icon" id="auto-modal-icon"></div>
+                    <h3 id="auto-modal-title"></h3>
+                </div>
+            </div>
+
+            <!-- 通用提醒框 -->
+            <div id="modal-container" class="modal-overlay">
+                <div class="modal">
+                    <div class="modal-header">
+                        <div class="modal-icon" id="modal-icon-element"></div>
+                        <h3 id="modal-title-element"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-message-element"></p>
+                    </div>
+                    <div class="modal-footer" id="modal-footer-element"></div>
+                </div>
+            </div>
+        </div>        
+    </main>
+    
+    <!-- 页面底部 -->
+    <footer class="site-footer">
+        <p>&copy; 2025个人博客系统-后台管理</p>
+    </footer>
+    
+    <!-- 确保JS在body底部引入，或者用DOMContentLoaded -->
+    <!-- 暂且需要这么设计，防止js代码在HTML元素创建之前就执行 -->
+    <!-- <script src="./js/pages/admin.js"></script> -->
+    <script type="module" src="./js/pages/admin.js" ></script>
+</body>
+</html>

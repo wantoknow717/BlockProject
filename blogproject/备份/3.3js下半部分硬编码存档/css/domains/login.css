@@ -1,0 +1,233 @@
+/* 登录区域 */
+
+
+
+/* 登录区 */
+.login-section {
+    max-width: 400px;
+    margin: var(--space-8) auto;
+    padding: var(--space-8);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    
+}
+/* 标题 */
+.login-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-md);
+}
+
+/* 登录表单 */
+.login-field {
+    /* composes: form-group */
+    margin-bottom: var(--space-5);
+}
+
+.login-field label {
+    /* composes */
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+    color: var(--color-text);
+
+    color: var(--color-text-md); /* 颜色修改了 */
+}
+
+.login-field input {
+    /* composes */
+    width: 100%;
+}
+.login-field input:hover, 
+.login-field textarea:hover, 
+.login-field select:hover {
+    /* composes */
+    outline: none;
+    border-image: linear-gradient(135deg, #8e9de8, #91c7f3) 1;
+    box-shadow: 0 0 0 2px rgba(172, 222, 241, 0.1);
+}
+/* required的样式需要通过Js修改，暂时去掉了 */
+
+/* 登录表单选项 */
+.login-actions {
+    /* composes:form-actions */
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+
+    border-top: none;
+    margin-top: 0;
+    padding-top: var(--space-2);
+}
+
+/* 登录表单提交 */
+.login-submit {
+    /* composes:btn btn-primary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;  /* 空白字符 */
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.login-submit:hover {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235);
+    text-decoration: none;
+}
+
+/* 登录成功弹窗 */
+.modal-success-overlay {
+    /* compose from modal-overlay modal*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* display: none; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-4);
+
+    background-color: transparent;
+    align-items: flex-start;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;  /* 阻止指针事件 */
+}
+.modal-success-overlay.show {
+    opacity: 1;
+}
+.modal-success-content {
+    /* compose from modal */
+    background: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    max-width: 250px;
+    margin-top: 60px;
+    max-height: none;
+    overflow: hidden;
+    border: 1px solid var(--color-text-lighter);
+    box-shadow: var(--shadow);
+    pointer-events: auto;
+    position: relative;
+}
+.modal-success-header {
+    display: flex;
+    align-items: center;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+.success-icon {
+    flex-shrink: 0; /* 防止图标被压缩 */
+    margin:0 var(--space-5);
+}
+.modal-success-header h3{
+    text-align: center;
+    margin-bottom: 0;
+    color: var(--color-primary-light);
+}
+.modal-success-content p{
+    text-align: center;
+}
+.modal-success-content button{
+    /* composes: modal-close */
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    color: var(--color-text-light);
+    padding: var(--space-1);
+    line-height: 1;
+
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-light);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.modal-success-content button:hover {
+    color: var(--color-text-md);
+}
+
+/* 登录失败弹窗 */
+.modal-fail-overlay {
+    /* compose from modal-overlay modal*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-4);
+
+    background-color: transparent;
+    align-items: flex-start;
+    overflow: hidden;
+    pointer-events: none;  /* 阻止指针事件 */
+}
+.modal-fail-overlay.show {
+    opacity: 1;
+}
+.modal-fail-content {
+    /* compose from modal */
+    background: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    max-width: 200px;
+    margin-top: 70px;
+    max-height: none;
+    overflow: hidden;
+    border: 1px solid var(--color-text-lighter);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+}
+
+.modal-fail-content p{
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--color-text-light);
+    display: inline-block;
+}
+/* .modal-fail-content img {
+    height: 20px;
+    margin: var(--space-2) 0;
+    
+} */

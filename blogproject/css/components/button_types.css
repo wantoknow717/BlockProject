@@ -1,0 +1,57 @@
+.edit-btn,
+.delete-btn,
+.confirm-btn,
+.cancel-btn {
+    /* composes: btn btn-sm */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;  /* 空白字符 */
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    padding: var(--space-2) var(--space-4);
+}
+.edit-btn,
+.cancel-btn {
+    /* composes: btn-secondary */
+    background-color: var(--color-border);
+    text-decoration: none;
+}
+.delete-btn,.confirm-btn {
+    /* compose:btn-danger */
+    background-color: var(--color-error);
+
+    color: var(--color-background-alt);
+}
+
+.edit-btn:hover,
+.cancel-btn:hover{
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-border);
+}
+.delete-btn:hover,
+.confirm-btn:hover {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-error);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    color: var(--color-text-light);
+    padding: var(--space-1);
+    line-height: 1;
+}
+.close-btn:hover{
+    color: var(--color-text);
+}
